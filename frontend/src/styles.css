@@ -1,0 +1,269 @@
+:root {
+  --bg: #141414;
+  --text: #ffffff;
+  --muted: #b3b3b3;
+  --accent: #e50914;
+  --panel: rgba(0, 0, 0, 0.78);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  background: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+  position: relative;
+}
+
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.45));
+}
+
+.auth-topbar {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem 3rem;
+}
+
+.auth-topbar h1,
+.home-nav h1 {
+  margin: 0;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: min(420px, 92vw);
+  margin: 4rem auto;
+  padding: 2rem;
+  background: var(--panel);
+  border-radius: 8px;
+}
+
+.auth-card h2 {
+  margin-top: 0;
+}
+
+.auth-card form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.auth-card input {
+  border: 0;
+  background: #333;
+  color: #fff;
+  padding: 0.85rem;
+  border-radius: 4px;
+}
+
+.auth-card button[type="submit"] {
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.85rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.switch-row {
+  color: var(--muted);
+}
+
+.link-btn {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.error-text {
+  color: #ff8389;
+}
+
+.home-shell {
+  min-height: 100vh;
+  background: #141414;
+}
+
+.home-nav {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.2rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent);
+}
+
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.right-actions button {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 72vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 6rem 2rem 2rem;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-content h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 0.65rem;
+}
+
+.hero-content p {
+  line-height: 1.5;
+  color: #ececec;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.hero-buttons button {
+  border: 0;
+  padding: 0.65rem 1.4rem;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hero-buttons .play {
+  background: #fff;
+}
+
+.hero-buttons .more {
+  background: rgba(109, 109, 110, 0.7);
+  color: #fff;
+}
+
+.rows-wrap {
+  margin-top: -3rem;
+  padding: 0 2rem 2rem;
+}
+
+.movie-row {
+  margin: 1.2rem 0 1.8rem;
+}
+
+.movie-row h3 {
+  margin-bottom: 0.6rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 180px;
+  overflow-x: auto;
+  gap: 0.65rem;
+  padding-bottom: 0.3rem;
+}
+
+.movie-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movie-grid::-webkit-scrollbar-thumb {
+  background: #3f3f3f;
+}
+
+.movie-card {
+  background: #1d1d1d;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.06);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-meta {
+  padding: 0.5rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.movie-meta span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.status {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .auth-topbar {
+    padding: 1.2rem;
+  }
+
+  .home-nav {
+    padding: 0.9rem 1rem;
+  }
+
+  .hero {
+    min-height: 60vh;
+    padding: 5rem 1rem 1.2rem;
+  }
+
+  .rows-wrap {
+    padding: 0 1rem 1.5rem;
+  }
+
+  .movie-grid {
+    grid-auto-columns: 140px;
+  }
+
+  .movie-card img {
+    height: 200px;
+  }
+}
